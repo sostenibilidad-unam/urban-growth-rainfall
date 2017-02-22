@@ -1,0 +1,42 @@
+&share
+ wrf_core = 'ARW',
+ max_dom = 4,
+ start_date = '2008-03-25_00:00:00','2008-03-25_00:00:00','2008-03-25_00:00:00', '2008-03-25_00:00:00'
+ end_date   = '2008-03-26_00:00:00','2008-03-26_00:00:00','2008-03-26_00:00:00', '2008-03-26_00:00:00'
+ interval_seconds = 21600
+ io_form_geogrid = 2,
+/
+
+&geogrid
+ parent_id         =   1,   1, 2,  3
+ parent_grid_ratio =   1,   5, 5,  3
+ i_parent_start    =   1, 21, 29, 17
+ j_parent_start    =   1, 21, 29, 22
+ e_we              =  56,  81, 96, 178
+ e_sn              =  56,  81, 96, 163
+! geog_data_res     = 'modis_30s+10m','modis_30s+2m','modis_30s+15s','modis_30s+15s',
+! geog_data_res     = '10m','5m','2m','2m',
+! geog_data_res     = 'modis_lakes+10m','modis_lakes+10m','modis_lakes+10m','modis_lakes+10m',
+ geog_data_res     = 'modis_lakes+10m','modis_lakes+10m','modis_lakes+30s','modis_lakes+15s',
+! geog_data_res     = 'modis_lakes+10m','modis_lakes+10m','modis_lakes+30s','nlcd2006',
+ dx = 75000,
+ dy = 75000,
+ map_proj = 'mercator',
+ ref_lat   =  19.43,
+ ref_lon   = -99.13,
+ truelat1  =  19.40,
+ truelat2  =  19.40,
+ stand_lon = -99.15,
+ geog_data_path = '/cm/shared/apps/wrf-wps/3.8.1/Build_WRF/WPS_GEOG'
+/
+
+&ungrib
+ out_format = 'WPS',
+prefix = 'FILE',
+/
+
+&metgrid
+ fg_name ='FILE'
+ !opt_output_from_metgrid_path = '/MNT/MD1200A/amagaldi/Control_FINAL/'
+ io_form_metgrid = 2,
+/
