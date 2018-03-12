@@ -1,5 +1,6 @@
 # install.packages("ncdf4")
 # install.packages("ncdf4.helpers")
+
 # install.packages("PCICt")
 # install.packages("tidyr")
 # install.packages("ggplot2")
@@ -9,10 +10,10 @@
 
 library(ncdf4)
 library(ncdf4.helpers)
-library(PCICt)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
+## library(PCICt)
+## library(dplyr)
+## library(tidyr)
+## library(ggplot2)
 
 args <- commandArgs(TRUE)
 
@@ -22,8 +23,8 @@ climate_output <- nc_open(args[2])
 lon <- ncvar_get(climate_output, varid = "XLONG")
 lat <- ncvar_get(climate_output, varid = "XLAT")
 temp <- ncvar_get(climate_output, varid = "T2")
-pp0 <- ncvar_get(climate_output2, varid = "RAINC")
-pp1 <- ncvar_get(climate_output2, varid = "RAINNC")
+pp0 <- ncvar_get(climate_output, varid = "RAINC")
+pp1 <- ncvar_get(climate_output, varid = "RAINNC")
 
 for (x in 1:length(estaciones[,1])){
   column <- match(round(estaciones[x ,1], digits=2), round(lat[1,], digits=2))
