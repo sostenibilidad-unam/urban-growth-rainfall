@@ -1,0 +1,14 @@
+executable     = extract_all.sh
+
+getenv = true
+
+output         = log/etl_$(Process).out
+error          = log/etl_$(Process).err
+log            = log/etl_$(Process).log
+
+
+Requirements = (Machine == "katsina5-10.lancis.ecologia.unam.mx")
+
+request_cpus   = 1
+
+queue

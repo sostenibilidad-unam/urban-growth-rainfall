@@ -29,8 +29,10 @@ temp <- ncvar_get(climate_output, varid = "T2")
 pp0 <- ncvar_get(climate_output, varid = "RAINC")
 pp1 <- ncvar_get(climate_output, varid = "RAINNC")
 
+date <- tail(strsplit(args[2], "_")[[1]], n=2)[1]
+time <- tail(strsplit(args[2], "_")[[1]], n=2)[2]
 
-out <- c()
+out <- c(c(date, time))
 
 for (x in 1:length(estaciones[,1])){
   column <- match(round(estaciones[x ,1], digits=2), round(lat[1,], digits=2))
