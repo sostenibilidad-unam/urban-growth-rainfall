@@ -42,8 +42,6 @@ res_temp <- agregacion(temperatura)
 colnames(res_temp) <- c("Mes", "Estacion", "Temperatura")
 
 
-#GRAFICAR
-
 #Creamos una segunda función "promedio" para obtener el promedio de la temperatura en función del mes
 promedio <- function(x){
   tmp <- aggregate(x[,3] ~ x[,1], FUN = mean)
@@ -53,12 +51,16 @@ promedio <- function(x){
 res_temp2 <- promedio(res_temp)
 colnames(res_temp2) <- c("Mes", "y1")
 
-#Creamos una tabla en donde estén los valores oobtenidos para amabas variables.
+#TABLA
+
+#Creamos una tabla en donde estén los valores obtenidos para amabas variables.
 Temp <- as.data.frame(res_temp2$y1)
 colnames(Temp) <- c("temperatura")
 
 Variables <- c(res2, Temp)
 temp_prec <- as.data.frame(Variables)
+
+#GRAFICAR
 
 #Graficamos el resultado (promedio) de ambas variables
 ## set up the data
