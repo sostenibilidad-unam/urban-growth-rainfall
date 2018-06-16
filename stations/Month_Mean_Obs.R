@@ -24,6 +24,12 @@ res2 <- promedio(res)
 colnames(res2) <- c("Mes", "Precipitacion")
 
 
+
+
+
+
+
+
 #TEMPERATURA
 #Hacemos un subset "temperatura" de la base de datos "Tabla"en el que se incluye sólo el periodo, las estaciones y la temperatura observada. 
 columnas <- c ("HourTemAve", "Mes", "Dia", "Hora", "Estaciones")
@@ -51,6 +57,12 @@ promedio <- function(x){
 res_temp2 <- promedio(res_temp)
 colnames(res_temp2) <- c("Mes", "y1")
 
+
+
+
+
+
+
 #TABLA
 
 #Creamos una tabla en donde estén los valores obtenidos para amabas variables.
@@ -59,6 +71,13 @@ colnames(Temp) <- c("temperatura")
 
 Variables <- c(res2, Temp)
 temp_prec <- as.data.frame(Variables)
+
+
+
+
+
+
+
 
 #GRAFICAR
 
