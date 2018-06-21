@@ -1,4 +1,4 @@
-#LLUVIA
+#PRECIPITACION 
 
 #Hacemos un subset "lluvia" de la base de datos "Tabla"en el que se incluye sólo el periodo, las estaciones y la precipitación observada. 
 columnas <- c ("HourSumPrec", "Mes", "Dia", "Hora", "Estaciones")
